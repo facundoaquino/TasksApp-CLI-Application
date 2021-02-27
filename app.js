@@ -1,6 +1,7 @@
 // const { showMenu, pause } = require('./helpers/messagges')
 
 const { inquirerMenu, pause } = require('./helpers/inquirer')
+const Tasks = require('./models/Tasks')
 
 require('colors')
 
@@ -12,7 +13,7 @@ const main = async () => {
 
         console.log({opt})
 
-
+ 
         
         await pause()
         
