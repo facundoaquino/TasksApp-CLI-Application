@@ -44,7 +44,25 @@ class Tasks {
 		// console.log(tasksFiltered)
 		tasksFiltered.forEach((task, inx) => {
 			const count = `${inx + 1}.`
-			console.log(`${count.blue}  ${task.description} : ${task.completed ? 'Completed' : 'Uncomplete'.red}  `)
+			console.log(`${count.blue}  ${task.description} : ${task.completed ? task.completed : 'Uncomplete'.red}  `)
+		})
+	}
+
+	deleteTask = (id) => {
+		if (this._all[id]) {
+			delete this._all[id]
+		}
+	}
+
+
+	toogleCompleted (ids = []){
+		ids.forEach(id =>{
+			const task = this._all[id]
+			if(!task.completed){
+				task.completed= new Date().toISOString()
+			}
+
+
 		})
 	}
 }
