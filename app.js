@@ -1,7 +1,7 @@
 // const { showMenu, pause } = require('./helpers/messagges')
 
 const { inquirerMenu, pause, readInput } = require('./helpers/inquirer')
-const { saveDb } = require('./helpers/saveFile')
+const { saveDb, readDb } = require('./helpers/saveFile')
 const Tasks = require('./models/Tasks')
 
 require('colors')
@@ -10,7 +10,14 @@ const main = async () => {
 	let opt = ''
 
 	const tasks = new Tasks()
-	console.log(tasks)
+
+	const tasksDb = readDb()
+
+	if (tasksDb) {
+		console.log('que onda perriquete')
+		tasks.saveTasksFromArray(tasksDb)
+	}
+
 	do {
 		opt = await inquirerMenu()
 
@@ -22,12 +29,22 @@ const main = async () => {
 				// console.log(description)
 				break
 			case '2':
-				console.log(tasks.tasksToArray)
+				// console.log(tasks.tasksToArray)
+
+				tasks.allTasks()
+
+				break
+
+			case '3':
+                tasks.filterCompleted(true)
+				break
+			case '4':
+                tasks.filterCompleted(false)
 
 				break
 		}
 
-        saveDb(tasks.tasksToArray)
+		saveDb(tasks.tasksToArray)
 
 		await pause()
 	} while (opt != 0)
