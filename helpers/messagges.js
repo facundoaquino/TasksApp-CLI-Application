@@ -13,7 +13,7 @@ const showMenu =  () => {
         console.log('======================='.gray)
     
         console.log(`${'1.'.green} Create task`);
-        console.log(`${'2.'.green} List task`);
+        console.log(`${'2.'.green} All tasks`);
         console.log(`${'3.'.green} List completed tasks`);
         console.log(`${'4.'.green} List incomplete tasks`);
         console.log(`${'5.'.green} Complete task`);
