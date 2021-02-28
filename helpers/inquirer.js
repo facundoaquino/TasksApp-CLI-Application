@@ -137,9 +137,9 @@ const showTasksCheckList = async (tasks = []) => {
 		},
 	]
 
-	const { id } = await inquirer.prompt(question)
+	const { ids } = await inquirer.prompt(question)
 
-	return id
+	return ids
 }
 
 module.exports = { inquirerMenu, pause, readInput, taskToDelete, confirm, showTasksCheckList }

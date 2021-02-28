@@ -2,7 +2,7 @@
      {
           "description": "react",
           "id": "f52e46e8-4f1c-46be-8d10-80b31e3346b9",
-          "completed": "27/2/2021"
+          "completed": "2021-02-28T15:11:19.925Z"
      },
      {
           "description": "mysql",
@@ -10,8 +10,13 @@
           "completed": null
      },
      {
-          "description": "hooks react",
-          "id": "3830683c-f485-46b6-b074-7f49f444d763",
+          "description": "cocinar la mila de pollo",
+          "id": "620d26be-161f-4fc8-b96c-95b01ee3ed10",
+          "completed": null
+     },
+     {
+          "description": "practicar ritmos ternarios",
+          "id": "496ce30b-2099-4078-8e5a-b4df6c875b47",
           "completed": null
      }
 ]

@@ -44,7 +44,7 @@ class Tasks {
 		// console.log(tasksFiltered)
 		tasksFiltered.forEach((task, inx) => {
 			const count = `${inx + 1}.`
-			console.log(`${count.blue}  ${task.description} : ${task.completed ? task.completed : 'Uncomplete'.red}  `)
+			console.log(`${count.blue}  ${task.description} : ${task.completed ? (task.completed).blue : 'Uncomplete'.red}  `)
 		})
 	}
 
@@ -54,17 +54,23 @@ class Tasks {
 		}
 	}
 
-
-	toogleCompleted (ids = []){
-		ids.forEach(id =>{
+	toogleCompleted(ids = []) {
+		ids.forEach((id) => {
 			const task = this._all[id]
-			if(!task.completed){
-				task.completed= new Date().toISOString()
+			if (!task.completed) {
+				task.completed = new Date().toISOString()
 			}
-
-
 		})
+
+		this.tasksToArray.forEach(task=>{
+			if(!ids.includes(task.id)){
+				this._all[task.id].completed=null
+			}
+		})
+
 	}
+
+
 }
 
 module.exports = Tasks
