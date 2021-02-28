@@ -9,31 +9,31 @@ const MENU_OPTIONS = [
 		choices: [
 			{
 				value: '1',
-				name: '1. Create Task',
+				name: `${'1'.blue} Create Task`,
 			},
 			{
 				value: '2',
-				name: '2. List Task',
+				name: `${'2'.blue} List Task`,
 			},
 			{
 				value: '3',
-				name: '3. List Completed Task',
+				name: `${'3'.blue} List Completed Task`,
 			},
 			{
 				value: '4',
-				name: '4. Task pending',
+				name: `${'4'.blue} Task pending`,
 			},
 			{
 				value: '5',
-				name: '5. Complete Task',
+				name: `${'5'.blue} Complete Task`,
 			},
 			{
 				value: '6',
-				name: '6. Delete Task',
+				name: `${'6'.blue} Delete Task`,
 			},
 			{
 				value: '0',
-				name: '0. Out',
+				name: `${'0'.blue} Out`,
 			},
 		],
 	},
@@ -42,7 +42,7 @@ const MENU_OPTIONS = [
 const inquirerMenu = async () => {
 	console.clear()
 	console.log('======================='.gray)
-	console.log('Select an option'.blue)
+	console.log('Select an option'.white.bold)
 	console.log('======================='.gray)
 
 	const { option } = await inquirer.prompt(MENU_OPTIONS)
@@ -63,19 +63,18 @@ const readInput = async (message) => {
 			type: 'input',
 			name: 'desc',
 			message,
-            validate(value){
-                if(value.length==0){
-                    return 'Please insert a value'
-                }
-                return true
-            }
+			validate(value) {
+				if (value.length == 0) {
+					return 'Please insert a value'
+				}
+				return true
+			},
 		},
 	]
 
-    const {desc} = await inquirer.prompt(question)
+	const { desc } = await inquirer.prompt(question)
 
-    return desc
-
+	return desc
 }
 
-module.exports = { inquirerMenu, pause , readInput }
+module.exports = { inquirerMenu, pause, readInput }

@@ -21,7 +21,7 @@ const main = async () => {
 				// console.log(description)
 				break
 			case '2':
-				console.log(tasks._all)
+				console.log(tasks.tasksToArray)
 
 				break
 		}
